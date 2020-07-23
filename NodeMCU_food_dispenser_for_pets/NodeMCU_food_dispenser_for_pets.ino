@@ -75,7 +75,7 @@ void setup() {
 
 //-----------------------------------------------------------------------------------------------LOOP---------------------------------------------------------------------------------------//
 void loop() {
-  // put your main code here, to run repeatedly
+
 int readsuccess = getid();
   
 
@@ -166,21 +166,12 @@ int getid() {
     readcard[i] = mfrc522.uid.uidByte[i]; //storing the UID of the tag in readcard
     array_to_string(readcard, 4, str);
     StrUID = str;
-    //Serial.println("ver si sirve 1");
+    
     Serial.println(str);
     Serial.println(StrUID);
-    //Serial.println("ver si sirve 2");
-
-
-    //servo.write(90);
-  //delay (1000);
   }
-  Serial.println("ver si sirve 1");
   Serial.println(StrUID);
   mfrc522.PICC_HaltA();
-  
-  //servo.write(0);
-  //delay (50);
   return 1;
 }
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------//
